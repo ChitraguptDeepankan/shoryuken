@@ -10,7 +10,7 @@ module Shoryuken
 
     def initialize(client, name_or_url_or_arn)
       self.client = client
-      set_name_and_url(name_or_url_or_arn)
+      set_name_and_url(name_or_url_or_arn) unless Rails.env == 'development'
     end
 
     def visibility_timeout
